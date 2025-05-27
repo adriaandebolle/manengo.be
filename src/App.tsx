@@ -1,6 +1,14 @@
+import React from "react";
 import { motion } from "framer-motion";
 import Logo3D from "./comps/Logo3D";
 import "./App.css";
+
+const projects = [
+  { name: "synt.be", url: "https://synt.be" },
+  { name: "contourlab.io", url: "https://contourlab.io" },
+  { name: "unblnd.com", url: "https://unblnd.com" },
+  { name: "relotrust.com", url: "https://relotrust.com" },
+];
 
 export default function Home() {
   return (
@@ -13,44 +21,28 @@ export default function Home() {
       >
         <h1 className="home-title">Adriaan De Bolle</h1>
         <p className="home-subtitle">
-          Manengo bv, Assestraat 11, 1790 Affligem, BE0770921653
+          🚀 Founder & Creative Technologist at Manengo bv
         </p>
-        <div className="home-links">
-          <a
-            href="https://synt.be"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="home-link"
-          >
-            synt.be
-          </a>
-          <span> | </span>
-          <a
-            href="https://contourlab.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="home-link"
-          >
-            contourlab.io
-          </a>
-          <span> | </span>
-          <a
-            href="https://unblnd.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="home-link"
-          >
-            unblnd.com
-          </a>
-          <span> | </span>
-          <a
-            href="https://relotrust.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="home-link"
-          >
-            relotrust.com
-          </a>
+        <p className="home-subtitle">
+          📍 Assestraat 11, 1790 Affligem, BE0770921653
+        </p>
+        <div className="home-links bg-box">
+          {projects.map((project, i) => (
+            <React.Fragment key={project.name}>
+              <motion.a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-link"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
+              >
+                {project.name}
+              </motion.a>
+              {i < projects.length - 1 && <span> | </span>}
+            </React.Fragment>
+          ))}
         </div>
       </motion.div>
 
