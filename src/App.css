@@ -1,0 +1,58 @@
+.home-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.home-content {
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.home-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+.home-links {
+  margin-top: 1.5rem;
+}
+
+.home-link {
+  margin: 0 0.5rem;
+  color: #646cff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.home-link:hover {
+  color: #535bf2;
+}
+
+.home-logo-container {
+  width: 400px;
+  height: 400px;
+}
+
+@media (prefers-color-scheme: light) {
+  .home-link {
+    color: #646cff;
+  }
+  .home-link:hover {
+    color: #747bff;
+  }
+}
