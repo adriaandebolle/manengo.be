@@ -50,11 +50,23 @@ function AnimatedBox({ position, color }: AnimatedBoxProps) {
 
 const Logo3D = () => {
   return (
-    <div style={{ width: "400px", height: "400px", margin: "auto" }}>
-      <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
+    <div
+      style={{
+        width: "min(400px, 90vw)", // Responsive width
+        height: "min(400px, 90vw)", // Responsive height, keeps it square
+        margin: "0 auto", // Center the canvas
+      }}
+    >
+      <Canvas
+        camera={{ position: [0, 0, 10], fov: 50 }}
+        style={{ width: "100%", height: "100%" }} // Fill the parent div
+      >
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
-        <OrbitControls enableZoom={false} />
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false} // Optional: disable pan for a cleaner mobile experience
+        />
         {/* Animate each box */}
         {boxes.map(([x, y, color], i) => (
           <Float key={i} speed={2} floatIntensity={0.5}>

@@ -26,13 +26,19 @@ export default function Home() {
         <p className="home-subtitle">
           📍 Assestraat 11, 1790 Affligem, BE0770921653
         </p>
-        <div className="home-links bg-box">
+        <div className="home-links">
           {projects.map((project, i) => (
             <React.Fragment key={project.name}>
               <motion.a
                 href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={
+                  project.url.startsWith("mailto:") ? undefined : "_blank"
+                }
+                rel={
+                  project.url.startsWith("mailto:")
+                    ? undefined
+                    : "noopener noreferrer"
+                }
                 className="home-link"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -40,7 +46,9 @@ export default function Home() {
               >
                 {project.name}
               </motion.a>
-              {i < projects.length - 1 && <span> | </span>}
+              {i < projects.length - 1 && (
+                <span className="home-link-separator"> | </span>
+              )}
             </React.Fragment>
           ))}
         </div>
@@ -53,6 +61,16 @@ export default function Home() {
         className="home-logo-container"
       >
         <Logo3D />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="home-email-container"
+      >
+        <a href="mailto:adriaan@manengo.be" className="home-email-link">
+          adriaan@manengo.be
+        </a>
       </motion.div>
     </div>
   );

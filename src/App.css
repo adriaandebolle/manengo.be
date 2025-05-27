@@ -1,12 +1,12 @@
 .home-container {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: clamp(1rem, 2vw, 2rem);
   box-sizing: border-box;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
@@ -20,46 +20,65 @@
 }
 
 .home-title {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   margin-bottom: 0.5rem;
   font-weight: 600;
   color: inherit;
 }
 
 .home-subtitle {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   margin-bottom: 1rem;
   color: inherit;
 }
 
-.bg-box {
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
 .home-links {
   margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap; /* This allows items to wrap to the next line */
+  justify-content: center;
+  gap: 0.5rem; /* Use gap instead of margins for better wrapping */
+  align-items: center;
+  line-height: 2; /* Helps with vertical centering */
 }
 
 .home-link {
-  margin: 0 0.5rem;
   color: #646cff;
   text-decoration: none;
   font-weight: 900;
+  padding: 0.2rem 0.5rem;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 .home-link:hover {
+  background: rgba(255, 255, 255, 0.5);
   color: #535bf2;
 }
 
+.home-link-separator {
+  color: #fff;
+  font-weight: 900;
+}
+
+@media (prefers-color-scheme: light) {
+  .home-link {
+    background: rgba(255, 255, 255, 0.7);
+    color: #646cff;
+  }
+  .home-link:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #747bff;
+  }
+}
+
 .home-logo-container {
-  width: 400px;
-  height: 400px;
+  width: min(400px, 80vw);
+  height: min(400px, 80vw);
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
 }
 
 @media (prefers-color-scheme: light) {
@@ -80,5 +99,38 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+.home-email-container {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.home-email-link {
+  color: #646cff;
+  font-weight: 900;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  text-decoration: none;
+  padding: clamp(0.5rem, 1.5vw, 0.8rem) clamp(1rem, 2vw, 1.5rem);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease, color 0.2s ease;
+  display: inline-block;
+}
+
+.home-email-link:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #535bf2;
+}
+
+@media (prefers-color-scheme: light) {
+  .home-email-link {
+    background: rgba(255, 255, 255, 0.7);
+    color: #646cff;
+  }
+  .home-email-link:hover {
+    background: rgba(255, 255, 255, 0.9);
   }
 }
