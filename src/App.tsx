@@ -4,6 +4,7 @@ import Logo3D from "./comps/Logo3D";
 import "./App.css";
 
 const projects = [
+  { name: "mop-opportunities.com", url: "https://mop-opportunities.com" },
   { name: "synt.be", url: "https://synt.be" },
   { name: "contourlab.io", url: "https://contourlab.io" },
   { name: "unblnd.com", url: "https://unblnd.com" },
