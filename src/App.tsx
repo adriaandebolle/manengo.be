@@ -4,10 +4,13 @@ import Logo3D from "./comps/Logo3D";
 import "./App.css";
 
 const projects = [
-  { name: "mop-opportunities.com", url: "https://mop-opportunities.com" },
+  { name: "unblnd.com", url: "https://unblnd.com" },
+  { name: "Matchmaking", url: "https://ubigreat.eu" },
+  { name: "Apotheekhulp", url: "https://apotheekhulp.be" },
+  { name: "AOI", url: "https://artofinvestigations.be/" },
+  { name: "Manage Opportunities", url: "https://mop-opportunities.com" },
   { name: "synt.be", url: "https://synt.be" },
   { name: "contourlab.io", url: "https://contourlab.io" },
-  { name: "unblnd.com", url: "https://unblnd.com" },
   { name: "relotrust.com", url: "https://relotrust.com" },
 ];
 
