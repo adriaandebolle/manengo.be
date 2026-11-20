@@ -12,6 +12,8 @@ const projects = [
   { name: "synt.be", url: "https://synt.be" },
   { name: "contourlab.io", url: "https://contourlab.io" },
   { name: "relotrust.com", url: "https://relotrust.com" },
+  { name: "leerkader.be", url: "http://leerkader.be/" },
+  { name: "poggenpohl-devis.be", url: "http://poggenpohl-devis.be/" },
 ];
 
 export default function Home() {
